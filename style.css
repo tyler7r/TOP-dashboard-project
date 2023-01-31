@@ -5,6 +5,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 .container {
@@ -12,32 +13,33 @@
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr 6fr;
     font-weight: bold;
-    border: 1px solid green;
+    max-height: 740px;
 }
 
 .sidebar {
     grid-column: 1/2;
     grid-row: 1/3;
-    background-color: lightskyblue;
+    background-color: #4792c4;
+    max-height: 100%;
 }
 
 .header {
     grid-column: 2/3;
     grid-row: 1/2;
     padding: 8px;
-    padding-left: 16px;
+    padding-left: 24px;
     padding-right: 24px;
+    padding-top: 12px;
+    min-width: 700px;
+    max-height: 100px;
+    margin-right: 12px;
 }
 
 .content {
     grid-column: 2/3;
     grid-row: 2/3;
     display: flex;
-}
-
-.icon {
-    border: 1px solid blue;
-    grid-column: 1/2;
+    max-height: 100%;
 }
 
 .dashboard {
@@ -46,6 +48,19 @@
     margin-bottom: 25px;
     font-size: 20px;
     margin-top: 16px;
+    gap: 8px;
+    min-width: 175px;
+}
+
+#dash-icon {
+    height: 36px;
+    width: 36px;
+    align-self: center;
+    justify-self: center;
+}
+
+#dash-title {
+    align-self: center;
 }
 
 .top-sidebar {
@@ -53,11 +68,13 @@
     grid-template-columns: 1fr 3fr;
     margin-bottom: 50px;
     margin-top: 50px;
+    gap: 8px;
 }
 
 .bottom-sidebar {
     display: grid;
     grid-template-columns: 1fr 3fr;
+    gap: 8px;
 }
 
 .icon {
@@ -86,26 +103,38 @@ svg {
     display: grid;
     grid-template-columns: 1fr 4fr 4fr;
     margin-top: 16px;
+    align-items: center;
+}
+
+.profile-logo {
+    height: 60px;
+    width: 60px;
 }
 
 .searchbar {
     display: flex;
     gap: 16px;
     align-self: center;
+    align-items: center;
 }
 
 .search {
     width: 85%;
-    height: 35%;
+    padding: 4px;
     border-radius: 8px;
     border:none;
-    background-color: lightgray;
+    background-color: #f2f4f5;
+}
+
+input:focus {
+    border: none;
 }
 
 .right-navbar {
     display: flex;
     gap: 12px;
     justify-content: center;
+    justify-self: end;
 }
 
 .hi {
@@ -116,19 +145,22 @@ svg {
     display: flex;
     gap: 16px;
     justify-content: center;
+    height: 30px;
+    justify-self: end;
 }
 
 button {
-    background-color: lightskyblue;
+    background-color: #4792c4;
     border-radius: 16px;
     color: white;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
     border: none;
+    font-weight: bold;
 }
 
 .content {
-    background-color: lightgray;
+    background-color: #f2f4f5;
     display: grid;
     grid-template-columns: 5fr 2fr;
     padding: 8px;
@@ -153,7 +185,6 @@ button {
     flex-direction: column;
     padding: 16px;
     padding-top: 32px;
-    /* padding-bottom: 32px; */
     margin: 8px;
     background-color: white;
     border-left: 5px solid gold;
@@ -166,7 +197,7 @@ button {
 }
 
 .right-content {
-    background-color: lightgray;
+    background-color: #f2f4f5;;
     display: grid;
     gap: 16px;
     margin-left: 8px;
@@ -188,7 +219,6 @@ button {
 
 .star, .branch, .eye {
     background-color: white;
-    color: black;
     padding: 0px;
 }
 
@@ -204,6 +234,7 @@ button {
     display: grid;
     padding: 16px;
     gap: 8px;
+    flex: 1;
 }
 
 .announcement_content {
@@ -213,17 +244,24 @@ button {
 
 .topic {
     display: flex;
-    gap: 12px;
+    gap: 8px;
+    align-self: center;
+}
+
+.topic_info {
     align-self: center;
 }
 
 .topic_icon {
     align-self: center;
+    justify-self: center;
+    height: 48px;
+    width: 48px;
 }
 
 .trending_card {
     display: grid;
-    gap: 24px;
+    gap: 8px;
     padding: 16px;
     font-size: 12px;
     flex: 1;
@@ -236,7 +274,8 @@ button {
 }
 
 .topic_title {
-    font-weight: normal;
+    font-weight: bold;
+    font-size: 14px;
 }
 
 .topic_content {
@@ -247,6 +286,8 @@ button {
 .announcement {
     border-bottom: 1px solid lightgray;
     padding-bottom: 8px;
+    display: grid;
+    align-items: center;
 }
 
 #last_announcement {
